@@ -207,7 +207,7 @@ st.markdown('<div class="dashboard-title">⚡ EV Market Intelligence Dashboard</
 st.markdown('<div class="dashboard-subtitle">U.S. EV Market Overview · Charging Infrastructure · Driving Behavior Insights</div>', unsafe_allow_html=True)
 
 # ════════════════════════════════════════════════════════════════════════════
-# CHANGE 1 — KEY INSIGHTS BANNER (moved above KPIs, merged into one block)
+# CHANGE 1 — KEY INSIGHTS BANNER
 # ════════════════════════════════════════════════════════════════════════════
 st.markdown("""
 <div class="insights-banner">
@@ -399,7 +399,7 @@ with col_b:
     st.plotly_chart(fig_donut, use_container_width=True)
 
 # ════════════════════════════════════════════════════════════════════════════
-# CHANGE 2 — YoY chart now full-width (Bubble Chart removed)
+# YoY chart now full-width
 # ════════════════════════════════════════════════════════════════════════════
 st.markdown('<div class="section-header">📊 Charging Port Year-over-Year Growth Rate</div>', unsafe_allow_html=True)
 st.markdown('<div class="section-subtext">After explosive early growth, expansion has entered a steady, maturing phase — signaling reliable long-term infrastructure momentum</div>', unsafe_allow_html=True)
@@ -424,7 +424,7 @@ fig_yoy.update_layout(
 st.plotly_chart(fig_yoy, use_container_width=True)
 
 # ════════════════════════════════════════════════════════════════════════════
-# CHANGE 3 — EV Suitability Calculator (fixed drive_env scoring)
+# EV Suitability Calculator
 # ════════════════════════════════════════════════════════════════════════════
 st.markdown('<div class="section-header">⚡ Interactive EV Suitability Calculator</div>', unsafe_allow_html=True)
 st.markdown('<div class="section-subtext">Adjust the inputs below to see how well an EV fits your lifestyle</div>', unsafe_allow_html=True)
@@ -521,102 +521,57 @@ with g2:
         )
 
 # ════════════════════════════════════════════════════════════════════════════
-# CHANGE 4 — RECOMMENDED ACTIONS FOR EXECUTIVES
+# RECOMMENDED ACTIONS FOR EXECUTIVES
 # ════════════════════════════════════════════════════════════════════════════
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown('<div class="section-header">🎯 Recommended Actions </div>', unsafe_allow_html=True)
-st.markdown('<div class="section-subtext">Prioritized strategic actions based on market data — organized by urgency</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">🎯 Recommended Actions</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-subtext">A 20% increase in EV development & production spending, deployed across three strategic priorities</div>', unsafe_allow_html=True)
 
 ra1, ra2, ra3 = st.columns(3)
 
 with ra1:
     st.markdown("""
     <div class="action-card">
-        <div class="action-priority priority-immediate">🔴 Immediate — 0–12 months</div>
-        <div class="action-title">Throttle ICE CapEx & Redirect to EV Production</div>
+        <div class="action-priority priority-immediate">🔴 Priority 1 — R&D & Battery Architecture</div>
+        <div class="action-title">Right-Size Batteries for Real-World Driving</div>
         <div class="action-body">
-            <b>Key action:</b> Set a binding CapEx reallocation target (e.g., shift
-            ≥30% of ICE platform spend to EV within 2 fiscal quarters) and tie
-            executive compensation milestones to this transition.
+            <b>Key action:</b> Redirect R&D investment toward battery architectures
+            optimized for the <b>sub-10-mile daily trip majority</b> rather than
+            over-engineering for extreme range scenarios. Reducing per-unit battery
+            capacity lowers production costs and accelerates volume scaling.
         </div>
-        <div class="action-metric">📌 Benchmark: <b>71.4%</b> of U.S. trips ≤10 mi — addressable by today's EVs</div>
+        <div class="action-metric">📌 Data: <b>71.4%</b> of U.S. trips are ≤10 mi — today's EVs are already overbuilt for most drivers</div>
     </div>
     """, unsafe_allow_html=True)
 
 with ra2:
     st.markdown("""
     <div class="action-card">
-        <div class="action-priority priority-immediate">🔴 Immediate — 0–12 months</div>
-        <div class="action-title">Invest in or Partner with Charging Infrastructure</div>
+        <div class="action-priority priority-immediate">🔴 Priority 2 — Production Scaling</div>
+        <div class="action-title">Ramp Output to Match Infrastructure Capacity</div>
         <div class="action-body">
-            <b>Key action:</b> Establish co-branded charging partnerships (e.g., with
-            highway corridors or retail chains) and bundle home charger installation
-            into vehicle purchase incentives to remove the "charging anxiety"
-            objection at the point of sale.
+            <b>Key action:</b> Expand physical production capacity to align with
+            the <b>168,000+ public charging ports</b> already deployed nationwide.
+            The charging network is ready — failing to scale output now means
+            leaving subsidized demand on the table while competitors move in.
         </div>
-        <div class="action-metric">📌 Context: Public charging ports grew <b>+23.5% YoY</b> in 2023 — momentum is building</div>
+        <div class="action-metric">📌 Context: Charging ports grew <b>+23.5% YoY</b> in 2023 — infrastructure is outpacing vehicle supply</div>
     </div>
     """, unsafe_allow_html=True)
 
 with ra3:
     st.markdown("""
     <div class="action-card">
-        <div class="action-priority priority-nearterm">🟡 Near-Term — 6–18 months</div>
-        <div class="action-title">Target Underserved State Markets for Early Entry</div>
+        <div class="action-priority priority-nearterm">🟡 Priority 3 — Regional Market Focus</div>
+        <div class="action-title">Go Deep in CA, FL, TX, NY & WA First</div>
         <div class="action-body">
-            <b>Key action:</b> Prioritize sales expansion and dealer network
-            development in high-growth secondary markets — specifically
-            <b>Texas, Florida, Georgia, North Carolina, and Arizona</b> —
-            before competitors entrench in those regions.
+            <b>Key action:</b> Concentrate production deployment and marketing spend
+            in the five highest-adoption states — <b>California, Florida, Texas,
+            New York, and Washington</b> — where EV demand is already proven and
+            infrastructure is established. Precision targeting maximizes immediate ROI
+            over a spread-thin national approach.
         </div>
-        <div class="action-metric">📌 Opportunity: <b>40+ states</b> account for only <b>&lt;25%</b> of current EV registrations</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-ra4, ra5, ra6 = st.columns(3)
-
-with ra4:
-    st.markdown("""
-    <div class="action-card">
-        <div class="action-priority priority-nearterm">🟡 Near-Term — 6–24 months</div>
-        <div class="action-title">Launch an Urban-Optimized, Sub-$30K EV</div>
-        <div class="action-body">
-            <b>Key action:</b> Fast-track development of a value-tier urban EV
-            positioned on total cost of ownership (TCO) vs. ICE — emphasizing
-            fuel and maintenance savings to reach value-conscious buyers in
-            Midwest and Southern markets.
-        </div>
-        <div class="action-metric">📌 Signal: <b>51.7%</b> of all U.S. trips are under 6 miles — a 200-mi EV is more than sufficient</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with ra5:
-    st.markdown("""
-    <div class="action-card">
-        <div class="action-priority priority-strategic">🔵 Strategic — 12–36 months</div>
-        <div class="action-title">Build a Dedicated Fleet & Commercial EV Pipeline</div>
-        <div class="action-body">
-            <b>Key action:</b> Establish a dedicated B2B fleet sales division targeting
-            logistics operators, municipalities, and ride-share companies. Offer
-            fleet financing, SLA-backed service contracts, and telematics integration
-            to differentiate from consumer EV offerings.
-        </div>
-        <div class="action-metric">📌 Advantage: Fleet operators have <b>controlled charging environments</b> — highest EV fit score</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with ra6:
-    st.markdown("""
-    <div class="action-card">
-        <div class="action-priority priority-strategic">🔵 Strategic — 24–48 months</div>
-        <div class="action-title">Align Product Roadmap with Battery Technology Milestones</div>
-        <div class="action-body">
-            <b>Key action:</b> Secure strategic partnerships or equity stakes in
-            solid-state battery developers now. Architect next-generation platforms
-            around this technology to avoid a costly mid-cycle re-engineering of
-            current EV lineups.
-        </div>
-        <div class="action-metric">📌 Watch: Solid-state battery pilots expected <b>2027–2028</b> — Toyota, QuantumScape, Samsung SDI</div>
+        <div class="action-metric">📌 Opportunity: These 5 states represent the largest validated EV demand hubs in the U.S.</div>
     </div>
     """, unsafe_allow_html=True)
 
